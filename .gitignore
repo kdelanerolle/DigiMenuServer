@@ -1,0 +1,4 @@
+*.pubxml
+DigiMenuServer/Properties/PublishProfiles/mobile$DigiMenuServer.pubxml.user
+*.mdf
+DigiMenuServer/App_Data/aspnet-DigiMenuServer-20150602113716_log.ldf
