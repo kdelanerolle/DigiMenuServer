@@ -30,7 +30,7 @@ namespace DigiMenuServer.Controllers
         /// </summary>
         /// <returns>Returns a list of user settings</returns>
         [Route("api/menu")]
-        public Menu GetMenu(Location location)
+        public Menu PostMenu(Location location)
         {
             // TODO: key off the location to retrieve the localized menu
             return MenuManager.GetMenuByRegionName("NORTH_AMERICA");
