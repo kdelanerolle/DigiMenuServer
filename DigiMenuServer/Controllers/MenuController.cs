@@ -6,7 +6,6 @@ using System.Web.Http.OData;
 using Microsoft.WindowsAzure.Mobile.Service;
 using DigiMenuServer.Models;
 using digimenuService.DataObjects;
-using DigiMenuServer.DataObjects;
 
 namespace DigiMenuServer.Controllers
 {
@@ -24,22 +23,29 @@ namespace DigiMenuServer.Controllers
             MenuManager = new MenuManager(new MobileServiceContext());
         }
 
-        // GET api/UserSettings
         /// <summary>
-        /// Gets a list of settings for the user
+        /// Returns the menu for the given geographical region.
         /// </summary>
-        /// <returns>Returns a list of user settings</returns>
+        /// <param name="longitude"></param>
+        /// <param name="latitude"></param>
+        /// <returns></returns>
         [Route("api/menu")]
-        public Menu PostMenu(Location location)
+        [HttpGet]
+        public Menu GetMenu(double longitude, double latitude)
         {
             // TODO: key off the location to retrieve the localized menu
             return MenuManager.GetMenuByRegionName("NORTH_AMERICA");
         }
 
+        /// <summary>
+        /// Increments the like counter for a menu item.
+        /// </summary>
+        /// <param name="id"></param>
         [Route("api/like")]
-        public void PostLikeMenuItem(MenuItem menuItem)
+        [HttpPost]
+        public void LikeMenuItem(string id)
         {
-            MenuManager.LikeMenuItem(menuItem.Id);
+            MenuManager.LikeMenuItem(id);
         }
     }
 }

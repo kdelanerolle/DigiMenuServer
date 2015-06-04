@@ -189,7 +189,6 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="DataObjects\Location.cs" />
     <Compile Include="DataObjects\Menu.cs" />
     <Compile Include="DataObjects\MenuCategory.cs" />
     <Compile Include="DataObjects\MenuItem.cs" />
