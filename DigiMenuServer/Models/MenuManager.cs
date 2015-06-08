@@ -15,9 +15,22 @@ namespace DigiMenuServer.Models
             _context = context;
         }
 
-        public virtual Menu GetMenuByRegionName(string region)
+        public virtual Menu GetMenuByCountryName(string country)
         {
-            return _context.Menus.Where(x=>x.Region == region).SingleOrDefault();
+            if (string.IsNullOrEmpty(country))
+            {
+                // santize country
+                country = string.Empty;
+            }
+
+            Menu result = _context.Menus.FirstOrDefault(menu => menu.Region.ToLower() == country.ToLower());
+            if (result == null)
+            {
+                // country not found - grab default menu
+                result = _context.Menus.FirstOrDefault(menu => menu.Region.ToLower() == "default".ToLower());
+            }
+
+            return result;
         }
 
         public virtual void LikeMenuItem(string menuItemId)

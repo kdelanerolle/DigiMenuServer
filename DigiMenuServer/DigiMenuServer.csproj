@@ -220,7 +220,7 @@
     <Content Include="Performance\Microsoft.ServiceBus.MessagingPerformanceCounters.man" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\mobile%24DigiMenuServer.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-digimenu.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

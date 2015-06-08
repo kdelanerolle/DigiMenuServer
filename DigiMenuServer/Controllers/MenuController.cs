@@ -31,10 +31,9 @@ namespace DigiMenuServer.Controllers
         /// <returns></returns>
         [Route("api/menu")]
         [HttpGet]
-        public Menu GetMenu(double longitude, double latitude)
+        public Menu GetMenu(string country)
         {
-            // TODO: key off the location to retrieve the localized menu
-            return MenuManager.GetMenuByRegionName("NORTH_AMERICA");
+            return MenuManager.GetMenuByCountryName(country);
         }
 
         /// <summary>
